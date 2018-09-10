@@ -1,0 +1,75 @@
+<div class="navigation col-lg-12">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="#" class="navbar-brand">{{title}}</a>
+
+            </div>
+
+            <ul class="nav navbar-nav" *ngIf="identity">
+                <li>
+                    <a [routerLink]="['/home']" [routerLinkActive]="['active']">
+                        <span class="glyphicon glyphicon-home">Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="glyphicon glyphicon-home">Timeline</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="glyphicon glyphicon-home">Genteng</span>
+                    </a>
+                </li>
+            </ul>
+
+
+            <ul class="nav navbar-nav navbar-right" *ngIf="!identity">
+                <li>
+                    <a [routerLink]="['/login']" [routerLinkActive]="['active']">
+                        <span class="glyphicon glyphicon-log-in">Login</span>
+                    </a>
+                </li>
+                <li>
+                    <a [routerLink]="['/register']" [routerLinkActive]="['active']">
+                        <span class="glyphicon glyphicon-user">Registrarse</span>
+                    </a>
+                </li>
+
+            </ul>
+
+
+
+
+
+           <ul class="nav navbar-nav navbar-right" *ngIf="identity">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" 
+                    aria-haspopup="true" aria-expanded="false">Admin <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">Separated link</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#" (click)="logout()">
+                        <span class="glyphicon glyphicon-log-out">Cerrar Sesion</span>
+                    </a></li>
+                    </ul>
+                </li>
+            </ul>
+
+
+
+
+
+
+
+
+        </div>
+    </nav>
+</div>
+
+<router-outlet></router-outlet>
